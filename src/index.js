@@ -35,7 +35,7 @@ const resolvers = {
   Query: {
     info: () => 'hackernews clone server',
     feed: () => links,
-    link: (id: string) => links.find((link) => link.id === id),
+    link: (root, args) => links.find((link) => link.id === args.id),
   },
 
   Mutation: {
@@ -48,8 +48,26 @@ const resolvers = {
       links.push(link);
       return link;
     },
-    updateLink: () => links[0],
-    deleteLink: () => links[0],
+    updateLink: (root, args) => {
+      let {id, url, description} = args;
+      let newLink = {
+        id,
+        url,
+        description,
+      };
+      links = links.map((link) => {
+        if (link.id === id) {
+          return newLink;
+        }
+        return link;
+      });
+      return newLink;
+    },
+    deleteLink: (root, args) => {
+      let deletedLink = links.find((link) => link.id === args.id);
+      links = links.filter((link) => link.id !== args.id);
+      return deletedLink;
+    },
   },
 
   Link: {
