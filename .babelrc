@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "transform-class-properties",
+    "transform-flow-strip-types",
+    "import-graphql",
+    "syntax-flow"
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}

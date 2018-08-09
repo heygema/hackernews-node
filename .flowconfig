@@ -1,0 +1,26 @@
+[ignore]
+
+.*/node_modules/animated/*
+.*/node_modules/react-native-web/*
+.*/node_modules/eslint-plugin-jsx-a11y/*
+.*/node_modules/react-event-listener/*
+.*/node_modules/react-resizable/*
+.*/node_modules/styled-components/*
+
+
+[include]
+
+[libs]
+
+[options]
+module.name_mapper.extension='graphql' -> '<PROJECT_ROOT>/utils/graphqlShim'
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.jsx
+module.file_ext=.jpeg
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+suppress_type=$FixMe
+
+[lints]
