@@ -4,3 +4,7 @@ endpoint: https://us1.prisma.sh/gema-anggada-c8a576/database/dev
 datamodel: datamodel.graphql
 
 secret: mysecret123
+
+hooks:
+  post-deploy:
+    - graphql get-schema --project database
