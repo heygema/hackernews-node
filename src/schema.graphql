@@ -1,4 +1,5 @@
 # import Link from "./generated/prisma.graphql"
+# import User from "./generated/prisma.graphql"
 
 type Query {
   info: String!
