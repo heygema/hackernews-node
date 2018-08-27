@@ -1,5 +1,5 @@
 [ignore]
-
+.*/node_modules/bcryptjs/*
 .*/node_modules/animated/*
 .*/node_modules/react-native-web/*
 .*/node_modules/eslint-plugin-jsx-a11y/*

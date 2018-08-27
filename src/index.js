@@ -4,50 +4,16 @@ import {GraphQLServer} from 'graphql-yoga';
 // import schema from './schema.graphql';
 import {Prisma} from 'prisma-binding';
 
+import * as Query from './resolvers/Query';
+
+import * as Mutation from './resolvers/Mutation';
+
+import * as AuthPayload from './resolvers/AuthPayload';
+
 const resolvers = {
-  Query: {
-    info: () => 'Basic graphql server',
-    feed: (root, args, context, info) => {
-      return context.db.query.links({}, info);
-    },
-  },
-  Mutation: {
-    post: (root, args, context, info) => {
-      return context.db.mutation.createLink(
-        {
-          data: {
-            url: args.url,
-            description: args.description,
-          },
-        },
-        info
-      );
-    },
-    updateLink: (root, args, context, info) => {
-      return context.db.mutation.updateLink(
-        {
-          data: {
-            url: args.url || root.url,
-            description: args.description || root.description,
-          },
-          where: {
-            id: args.id,
-          },
-        },
-        info
-      );
-    },
-    deleteLink: (root, args, context, info) => {
-      return context.db.mutation.deleteLink(
-        {
-          where: {
-            id: args.id,
-          },
-        },
-        info
-      );
-    },
-  },
+  Query,
+  Mutation,
+  AuthPayload,
 };
 
 const server = new GraphQLServer({
