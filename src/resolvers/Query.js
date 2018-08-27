@@ -1,5 +1,5 @@
-function feed(parent, args, context, info) {
-  return context.db.query.links({}, info);
-}
+import postQuery from '../app/post/postQuery';
 
-export {feed};
+export default {
+  ...postQuery,
+};

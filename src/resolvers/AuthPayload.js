@@ -1,5 +1,5 @@
-function user(parent, args, context, info) {
-  return context.db.query.user({where: {id: parent.user.id}}, info);
-}
+import userAuth from '../app/users/userAuth';
 
-export {user};
+export default {
+  ...userAuth,
+};

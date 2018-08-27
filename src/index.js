@@ -1,14 +1,9 @@
 // @flow
-
 import {GraphQLServer} from 'graphql-yoga';
-// import schema from './schema.graphql';
 import {Prisma} from 'prisma-binding';
-
-import * as Query from './resolvers/Query';
-
-import * as Mutation from './resolvers/Mutation';
-
-import * as AuthPayload from './resolvers/AuthPayload';
+import Query from './resolvers/Query';
+import Mutation from './resolvers/Mutation';
+import AuthPayload from './resolvers/AuthPayload';
 
 const resolvers = {
   Query,
