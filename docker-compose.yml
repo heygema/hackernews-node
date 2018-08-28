@@ -4,20 +4,20 @@ services:
     image: prismagraphql/prisma:1.12
     restart: always
     ports:
-      - '4466:4466'
+      - '4467:4467'
     environment:
       PRISMA_CONFIG: |
-        port: 4466
+        port: 4467
         databases:
           default:
             connector: mysql
             active: true
-            host: prisma-db
+            host: prisma-db-tutorial
             port: 3306
             user: root
             password: prisma
   db:
-    container_name: prisma-db
+    container_name: prisma-db-tutorial
     image: mysql:5.7
     restart: always
     environment:

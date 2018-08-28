@@ -1,5 +1,6 @@
 #endpoint: ''
-endpoint: https://us1.prisma.sh/gema-anggada-c8a576/database/dev
+# endpoint: https://us1.prisma.sh/gema-anggada-c8a576/database/dev
+endpoint: http://localhost:4467
 
 datamodel: datamodel.graphql
 
